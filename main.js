@@ -10,16 +10,18 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const nome = document.getElementById('nome');
-    const senha = document.getElementById('password');
+    const password = document.getElementById('password');
     const email = document.getElementById('email');
     const telefone = document.getElementById('telefone');
     const datanascimento = document.getElementById('data-nascimento');
-    const mensagemSuceso = 'registro efetuado com sucesso';
+    const mensagemSuceso = `registro efetuado com sucesso: <b>${nome.value}</b>`;
 
 
     formEValidao = validaNome(nome.value)
     if (formEValidao) {
-        alert(mensagemSuceso);
+        const containerMesagemSucesso = document.querySelector('.success-message');
+        containerMesagemSucesso.innerHTML = mensagemSuceso;
+        containerMesagemSucesso.style.display = 'block';
 
         nome.value = '';
         password.value = '';

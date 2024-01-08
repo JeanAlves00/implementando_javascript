@@ -56,3 +56,20 @@ form button {
 form button:hover {
     background-color: #00b3b3; /* Cor de fundo do botão ao passar o mouse */
 }
+
+.error-message {
+    background-color: #bd0000;
+    padding: 16px;
+    border-radius: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.success-message {
+    background-color: #333;
+    padding: 16px;
+    border-radius: 16px;
+    max-width: 400px;
+    margin: 0 auto;
+    display: none;
+}
