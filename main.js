@@ -1,4 +1,6 @@
 const form = document.getElementById('form-registro');
+const nome = document.getElementById('nome');
+let formEValidao = false;
 
 function validaNome(nomeCompleto) {
     const nomeComoArray = nomeCompleto.split(' ');
@@ -6,14 +8,12 @@ function validaNome(nomeCompleto) {
 }
 
 form.addEventListener('submit', function(e) {
-    let formEValidao = false;
     e.preventDefault();
 
-    const nome = document.getElementById('nome');
     const password = document.getElementById('password');
     const email = document.getElementById('email');
     const telefone = document.getElementById('telefone');
-    const datanascimento = document.getElementById('data-nascimento');
+    const datanascimento = document.getElementById('datanascimento');
     const mensagemSuceso = `registro efetuado com sucesso: <b>${nome.value}</b>`;
 
 
@@ -30,9 +30,20 @@ form.addEventListener('submit', function(e) {
         datanascimento.value = '';
 
     } else {
-        nome.style.border = '1px solid red'
+        nome.style.border = '1px solid red';
         document.querySelector('.error-message').style.display = 'block';
     }
-})
+});
 
-console.log(form);
+nome.addEventListener('keyup', function (e) {
+    console.log(e.target.value);
+    formEValidao = validaNome(e.target.value);
+
+    if (!formEValidao) {
+        nome.classList.add('error');
+        document.querySelector('.error-message').style.display = 'block';
+    } else {
+        nome.classList.remove('error');
+        document.querySelector('.error-message').style.display = 'none';
+    }
+    });

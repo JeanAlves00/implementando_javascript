@@ -75,3 +75,9 @@ form button:hover {
     margin: 16px auto;
     display: none;
 }
+
+input.error {
+    color: #ff0000;
+    border-color: #ff0000;
+    outline-color: #ff0000;
+}
