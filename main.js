@@ -30,7 +30,8 @@ form.addEventListener('submit', function(e) {
         datanascimento.value = '';
 
     } else {
-        alert('Nome não está completo');
+        nome.style.border = '1px solid red'
+        document.querySelector('.error-message').style.display = 'block';
     }
 })
 

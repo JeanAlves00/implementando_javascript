@@ -63,6 +63,8 @@ form button:hover {
     border-radius: 16px;
     max-width: 400px;
     margin: 0 auto;
+    margin: 16px;
+    display: none;
 }
 
 .success-message {
@@ -70,6 +72,6 @@ form button:hover {
     padding: 16px;
     border-radius: 16px;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 16px auto;
     display: none;
 }
